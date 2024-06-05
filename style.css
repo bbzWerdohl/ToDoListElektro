@@ -1,0 +1,526 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    max-width: 1440px;
+    margin: 20px auto;
+}
+
+h1{
+    color: white;
+    font-size: 50px;
+}
+
+#create_task{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+#create_task_button{
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(3, 50, 92);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 248, 248, 0.514);
+}
+
+.modal_open{
+    display: block;
+}
+
+.modal_content{
+    background-color: rgb(10, 44, 75);
+    margin: 15% auto;
+    padding: 50px;
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+    position: relative;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+.details{
+    max-width: 1000px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    border: none;
+    padding: 10px;
+    
+}
+
+.task_name{
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    max-width: 1000px;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#categorie_select{
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    max-width: 200px;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#categorie_select option{
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(44, 43, 43);
+}
+
+.nameOfCreator{
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    max-width: 1000px;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.submit{
+    background-color: rgb(2, 121, 2);
+    border: none;
+    border-radius: 20px;
+    max-width: 1000px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    color: black;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus{
+    cursor: pointer;
+}
+
+#task_info_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#task_info_content h3{
+    color: white;
+    font-size: 32px;
+    border-bottom: 1px solid white;
+}
+
+#task_info_content p{
+    color: white;
+    font-size: 20px;
+}
+
+#task_info_content small{
+    color: rgb(199, 4, 248);
+    font-size: 20px;
+}
+
+#fertig_checkbox{
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+#im_arbeit_checkbox{
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+#edit_button{
+    background-color: rgb(4, 0, 255);
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+#delete_button{
+    background-color: rgb(182, 74, 3);
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+#save_button{
+    background-color: rgb(4, 173, 46);
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+#task_name_input{
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(44, 43, 43);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#list{
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categorie{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+h3{
+    color: white;
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+.categorie_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task{
+    background-color: rgb(1, 1, 44);
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    max-width: 800px;
+    cursor: pointer;
+    padding: 20px 10px;
+}
+
+.task h4{
+    color: white;
+    font-size: 30px;
+    flex: 1;
+    word-wrap: break-word;
+}
+
+.task small, p{
+    color: rgb(118, 4, 248);
+    font-size: 20px;
+}
+
+label{
+    font-size: 20px;
+    color: white;
+}
+
+.task-in-work{
+    background-color: violet;
+}
+.task-complete{
+    background-color: lightgreen;
+}
+.task:hover {
+	-webkit-animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes shadow-inset-center {
+    0% {
+      -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: inset 0 0 20px 0px rgb(145, 3, 3);
+              box-shadow: inset 0 0 20px 0px rgb(145, 3, 3);
+    }
+  }
+  @keyframes shadow-inset-center {
+    0% {
+      -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: inset 0 0 20px 0px rgb(145, 3, 3);
+              box-shadow: inset 0 0 20px 0px rgb(145, 3, 3);
+    }
+  }
+  
+  @media only screen and (max-width: 740px){
+    h1, h3{
+        font-size: 20px;
+    }
+    .task h4, .taskElemInfo small, p{
+        font-size: 16px;
+    }
+    #create_task_button{
+        font-size: 16px;
+    }
+    #create_task{
+        margin: 20px 20px
+    }
+    #list{
+        margin: 0 20px;
+    }
+    .modal_content{
+        width: 50%;
+        margin: 200px auto;
+    }
+    #create_task_form{
+        margin: 0 auto;
+    }
+    #categorie_select{
+        height: 35px;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .task_name, .nameOfCreator{
+        height: 35px;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .details{
+        height: 100px;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .submit{
+        font-size: 16px;
+    }
+    #task_info_content{
+        gap: 20px;
+    }
+    #task_info_content h3{
+        font-size: 20px;
+    }
+    #task_info_content p, #task_info_content small{
+        font-size: 16px;
+    }
+    #edit_button, #delete_button{
+        font-size: 16px;
+    }
+    #edit_section label{
+        font-size: 16px;
+    }
+    #fertig_checkbox, #im_arbeit_checkbox{
+        width: 16px;
+        height: 16px;
+    }
+    #task_name_input{
+        font-size: 16px;
+        height: 35px;
+    }
+    #save_button{
+        font-size: 16px
+    }
+  }
+
+  @media only screen and (max-width: 670px){
+    h1, h3{
+        font-size: 16px;
+    }
+    .task h4, .taskElemInfo small, p{
+        font-size: 12px;
+    }
+    #create_task_button{
+        font-size: 12px;
+    }
+    #create_task{
+        margin: 20px 20px
+    }
+    #list{
+        margin: 0 20px;
+    }
+
+    #task_info_content{
+        gap: 15px;
+    }
+
+    #create_task_form{
+        gap: 15px;
+    }
+
+    .modal_content{
+        width: 50%;
+        margin: 200px auto;
+    }
+    #categorie_select{
+        height: 35px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    .task_name, .nameOfCreator{
+        height: 35px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    .details{
+        height: 100px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    .submit{
+        font-size: 12px;
+    }
+    #edit_section label{
+        font-size: 12px;
+    }
+    #fertig_checkbox, #im_arbeit_checkbox{
+        width: 12px;
+        height: 12px;
+    }
+    #task_name_input{
+        font-size: 12px;
+        height: 35px;
+    }
+    #save_button{
+        font-size: 12px
+    }
+  }
+  @media only screen and (max-width: 540px){
+    h1, h3{
+        font-size: 16px;
+    }
+    .task h4, .taskElemInfo small, p{
+        font-size: 12px;
+    }
+    #create_task_button{
+        font-size: 12px;
+    }
+    #create_task{
+        margin: 20px 20px
+    }
+    #list{
+        margin: 0 20px;
+    }
+    .modal_content{
+        width: 50%;
+        margin: 20px auto;
+    }
+    #categorie_select{
+        height: 35px;
+        font-size: 8px;
+        padding: 5px;
+    }
+    .task_name, .nameOfCreator{
+        height: 35px;
+        font-size: 8px;
+        padding: 5px;
+        width: 120px;
+    }
+
+    #task_info_content{
+        gap: 10px;
+    }
+
+    #create_task_form{
+        gap: 5px;
+    }
+
+    .details{
+        height: 100px;
+        font-size: 8px;
+        padding: 5px;
+        width: 120px;
+    }
+    .submit{
+        font-size: 12px;
+        height: 35px;
+        width: 120px;
+    }
+    #task_info_content h3{
+        font-size: 12px
+    }
+    #task_info_content p, #task_info_content small{
+        font-size: 10px;
+    }
+    #edit_button{
+        font-size: 12px;
+        height: 35px;
+    }
+    #delete_button{
+        font-size: 12px;
+        height: 35px;
+    }
+    #save_button{
+        font-size: 12px;
+        height: 35px
+    }
+    #task_name_input{
+        width: 150px;
+    }
+  }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Liste Elektro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>bbz Elektro ToDo Liste</h1>
+    </header>
+    <main>
+        <div class="modal" id="create_task_modal">
+            <div class="modal_content">
+                <button class="close">X</button>
+                <form id="create_task_form">
+                    <select name="categorie" id="categorie_select">
+                        <option value="Mathematik">Mathematik</option>
+                        <option value="Reihenschaltung">Reihenschaltung</option>
+                        <option value="Parallelschaltung">Parallelschaltung</option>
+                        <option value="Gruppenschaltung">Gruppenschaltung</option>
+                        <option value="Praktische tätighkeit">Praktische tätighkeit</option>
+                        <option value="Allgemein">Allgemein</option>
+                    </select>
+                    <input type="text" class="task_name" placeholder="Bitte benennen Sie Aufgabe" required>
+                    <input type="text" class="details" placeholder="Beschreibung" required>
+                    <input type="text" class="nameOfCreator" placeholder="Name des Erschtellers">
+                    <button type="submit" class="submit">Hinzufügen</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="task_info_modal" class="modal">
+            <div class="modal_content">
+                <button class="close">X</button>
+                <div id="task_info_content">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="create_task">
+            <button id="create_task_button">Neue Aufgabe hinterlägen</button>
+        </div>
+        
+        <div id="list">
+            <div class="categorie">
+                <h3>Mathematik</h3>
+                <div class="categorie_list"></div>
+            </div>
+            <div class="categorie">
+                <h3>Reihenschaltung</h3>
+                <div class="categorie_list"></div>
+            </div>
+            <div class="categorie">
+                <h3>Parallelschaltung</h3>
+                <div class="categorie_list"></div>
+            </div>
+            <div class="categorie">
+                <h3>Gruppenschaltung</h3>
+                <div class="categorie_list"></div>
+            </div>
+            <div class="categorie">
+                <h3>Praktische tätighkeit</h3>
+                <div class="categorie_list"></div>
+            </div>
+            <div class="categorie">
+                <h3>Allgemein</h3>
+                <div class="categorie_list"></div>
+            </div>
+            
+        </div>        
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
+
+
+
+    
