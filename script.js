@@ -1,7 +1,7 @@
 const defaultData = [
     {
         id: 0,
-        categorie: "Allgemein",
+        categorie: "Allgemeine Tätigkeit",
         title: "Aufgaben hinterlägen",
         beschreibung: "Hinterlägen alle Aufgaben",
         created_at: "05.06.2024",
